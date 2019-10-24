@@ -15,7 +15,7 @@
 
 </form>
 <form method="post" action="surname">
-    <input name="surname"/>
+    <input name="surname" required="required"/>
     <input type="submit"/>
 </form>
 </html>
