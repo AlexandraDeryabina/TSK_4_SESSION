@@ -1,21 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alexandra
-  Date: 24.10.2019
-  Time: 12:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Как вас зовут?</title>
-</head>
-<form>
-    <p><strong>Ваше имя?</strong></p>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="messages"/>
 
+<html lang="${sessionScope.lang}">
+<head>
+    <title><fmt:message key="label.title"/></title>
+</head>
+<body>
+<jsp:include page="changeLocale.jsp"/>
+<form>
+    <p><strong><fmt:message key="label.name"/></strong></p>
 </form>
 <form method="post" action="name">
     <input name="name" required="required"/>
-    <input type="submit"/>
+    <button><fmt:message key="label.send"/></button>
 </form>
+</body>
 </html>
